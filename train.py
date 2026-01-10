@@ -24,7 +24,7 @@ def main():
                                    transforms.ToTensor(),
                                    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])}
 
-    DATA_SET_PATH = '/kaggle/input/alzheimersoriginaldataset/OriginalDataset'
+    DATA_SET_PATH = '/kaggle/input/adni1-1yr-1-5t-640samples-midslide'
 
     train_dataset = datasets.ImageFolder(root=DATA_SET_PATH,
                                          transform=data_transform["train"])
