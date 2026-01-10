@@ -7,7 +7,7 @@ import torch.nn as nn
 from torchvision import transforms, datasets
 import torch.optim as optim
 from tqdm import tqdm
-
+from torchsummary import summary
 from MedMamba import VSSM as medmamba # import model
 
 
@@ -59,6 +59,8 @@ def main():
     net.to(device)
     loss_function = nn.CrossEntropyLoss()
     optimizer = optim.Adam(net.parameters(), lr=0.0001)
+
+    summary(model, input_size=(1, 224, 224))
 
     epochs = 100
     best_acc = 0.0
